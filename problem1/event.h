@@ -1,14 +1,22 @@
-#ifndef _EVENT_H
-#define _EVENT_H
+#ifndef _EVENTLIST_H
+#define _EVENTLIST_H
 
-// Event class
-typedef struct _event
+#include "event.h"
+
+
+// EventList class
+typedef struct _eventList
 {
-    char eventName[16];
-    struct _event *next;
-} Event;
+    char isEmpty;
+    Event *head;
+    Event *last;
+} EventList;
 
-Event *CreateEvent(char *name);
-void DestroyEvent(Event *this);
+EventList *CreateEventList(void);
+void AddEvent(EventList *this, Event *event);
+Event *SearchEvent(EventList *this, char *name);
+void DestroyEventList(EventList *this);
+void RemoveEvent(EventList *this, char *name);
+void ListEvents(EventList *this);
 
 #endif
