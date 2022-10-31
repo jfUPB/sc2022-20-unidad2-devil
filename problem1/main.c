@@ -22,8 +22,7 @@ int main(void)
     }
 #endif
     
-    EventList *eventList = NULL;
-    eventList = CreateEventList();
+    EventList *eventList = CreateEventList();
     LOG("eventList object created\n");
 
     while (fgets(commandBuf, sizeof(commandBuf), stdin) != NULL)
